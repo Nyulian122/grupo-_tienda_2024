@@ -1,0 +1,5 @@
+.principal{
+    background-color: blue;
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
