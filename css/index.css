@@ -4,5 +4,4 @@
     display: grid;
     grid-template-rows: 20% 1fr 20%; 
     grid-template-columns: 20% 1fr;
-    background-color: aquamarine;
 }
