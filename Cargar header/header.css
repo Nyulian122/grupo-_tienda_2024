@@ -1,5 +1,62 @@
 .header{
     grid-column-start: 1;
     grid-column-end: 3;
-    background-color: aquamarine;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    height: 50%;    
+    font-size: 2rem;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search button {
+    background-color: #555;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.options {
+    display: flex; /* Usamos flexbox */
+    align-items: center;
+}
+
+.options a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.options a i {
+    margin-right: 5px;
 }
