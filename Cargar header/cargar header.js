@@ -59,29 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         modalCarrito.style.display = "none";
     }
 
-    // Función para cargar el carrito
-    async function cargarCarrito() {
-        try {
-            const res = await fetch('https://fakestoreapi.com/carts/user/2');
-            const listaCarrito = await res.json();
-            imprimirCarrito(listaCarrito);
-        } catch (error) {
-            console.log("error", error);
-        }
-    }
-
-    // Función para imprimir el carrito en la ventana modal
-    function imprimirCarrito(listaCarrito) {
-        let carritoItems = document.getElementById("carritoItems");
-        carritoItems.innerHTML = ''; // Limpiar contenido previo
-        listaCarrito.forEach(element => {
-            let div = document.createElement("div");
-            div.innerHTML = `
-            <div>${element.products}</div>
-            <p>Producto: ${element.id} - Cantidad: ${element.userId}</p>`;
-            carritoItems.appendChild(div);
-        });
-    }
+ 
 
     const iniciarSesionIcon = document.querySelector('.iniciar-sesion');
     const modalLogin = document.getElementById("loginModal");
@@ -104,3 +82,76 @@ document.addEventListener("DOMContentLoaded", function() {
         modalLogin.style.display = "none";
     });
 });
+async function cargarCarrito() {
+    try {
+        let respuesta = await fetch('https://fakestoreapi.com/products?limit=2');
+        let datos = await respuesta.json();
+
+        // Limpiar el contenido actual de carritoItems
+        let carritoItems = document.getElementById("carritoItems");
+        carritoItems.innerHTML = '';    
+
+        // Crear un div por cada item y añadirlo a carritoItems
+        datos.forEach(item => {
+            let itemDiv = document.createElement("div");
+            itemDiv.className = "carrito-item";
+
+            // Tomar solo las primeras cinco palabras del título para el texto corto
+            const shortText = item.title.split(' ').slice(0, 5).join(' ');
+
+            // Usar plantillas literales para el contenido del div
+            itemDiv.innerHTML = `
+                <div class="box_img">
+                    <img src="${item.image}" alt="${shortText}">
+                </div>
+                <div class="caja_descri">
+                    <span class="name">${shortText}</span>
+                    <span class="price">Q${item.price}</span>
+                </div>
+            `;
+            carritoItems.appendChild(itemDiv);
+        });
+
+        console.log("Datos cargados correctamente en el carrito");
+    } catch (error) {
+        console.log("Error al cargar el carrito:", error);
+    }
+}
+
+function inicializarCarritoModal() {
+    // Añadir el HTML del modal al body
+    document.body.insertAdjacentHTML('beforeend', `
+        <!-- Modal -->
+        <div id="carritoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Tu Carrito de Compras</h2>
+                <div id="carritoItems"></div>
+            </div>
+        </div>
+    `);
+
+    // Obtener elementos del modal
+    let modal = document.getElementById("carritoModal");
+    let span = document.getElementsByClassName("close")[0];
+
+    // Abrir el modal al hacer clic en el icono del carrito
+    document.querySelector(".carrito").addEventListener("click", function() {
+        cargarCarrito();  // Cargar el contenido del carrito
+        modal.style.display = "block";
+    });
+
+    // Cerrar el modal al hacer clic en el botón de cerrar
+    span.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // Cerrar el modal al hacer clic fuera del contenido del modal
+    window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
+}
+cargarCarrito()
+inicializarCarritoModal()
