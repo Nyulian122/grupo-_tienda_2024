@@ -6,10 +6,10 @@
 }
 
 .footer{
-    background-color: #000000ff;
+    background-color: #04474b;
     position: relative;
     width: 100%;
-    min-height: 350px;
+    min-height: 300px;
     padding: 3rem 1rem;
     font-size: 2rem;
 }
@@ -31,7 +31,7 @@
 
 .col{
    min-width: 250px;
-   color:#f2f2f2f2;
+   color:#fffffff2;
    font-family: poppins;
    padding:0 2rem;
 }
@@ -40,7 +40,7 @@
    margin-bottom:25px;
 }
 .col h3{
-   color:#ff014fff;
+   color:#D3B9B9;
    margin-bottom: 20px;
    position: relative;
    cursor: pointer;
@@ -49,7 +49,7 @@
    content: '';
    height:3px;
    width:0px;
-   background-color: #ff014fff;
+   background-color: #D3B9B9;
    position: absolute;
    bottom: 0;
    left:0;
@@ -60,7 +60,7 @@
    width:30px
 }
 .col .social a i{
-   color:#ff014fff;
+   color: #e4981e;
    margin-top:2rem;
    margin-right: 5px;
    transition: 0.3s ease;
@@ -84,7 +84,7 @@
    position: absolute;
    top:5px;
    left:-10px;
-   background-color: #ff014fff;
+   background-color: #e4981e;
    transition: 0.5s ease;
    opacity: 0;
 }
@@ -93,7 +93,7 @@
 }
 .col .links a:hover{
    transform: translateX(-8px);
-   color:#ff014fff;
+   color:#e4981e;
 }
 .col .contact-details{
    display: inline-flex;
@@ -109,7 +109,7 @@
    padding:2rem 0;
 }
 .row .form input{
-   background-color: #1a1c20ff;
+   background-color: #e7e7e5;
    border:0;
    outline:none;
    padding:14px 20px;
@@ -123,5 +123,139 @@
    border-radius: 6px;
    border-top-left-radius: 0;
    border-bottom-left-radius: 0;
-   background-color: #ff014fff;
+   background-color: #e4981e;
 }
+
+
+@media screen and (max-width: 448px) {
+   .footer{
+      grid-row-start: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+  
+  }
+  
+  .footer{
+      background-color: #04474b;
+      position: relative;
+      width: 60%;
+      min-height: 300px;
+      padding: 3rem 1rem;
+      font-size: 2rem;
+  }
+  .container1 {
+     max-width: 1140px;
+     margin: 0 auto;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+  
+  
+  }
+  .row{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+  }
+  
+  .col{
+   font-size: 15px;
+     min-width: 150px;
+     color:#fffffff2;
+     font-family: poppins;
+     padding:0 2rem;
+  }
+  .col .logo{
+     width: 75px;
+     margin-bottom:25px;
+  }
+  .col h3{
+      font-size: 17px;
+     color:#D3B9B9;
+     margin-bottom: 20px;
+     position: relative;
+     cursor: pointer;
+  }
+  .col h3::after{
+     content: '';
+     height:3px;
+     width:0px;
+     background-color: #D3B9B9;
+     position: absolute;
+     bottom: 0;
+     left:0;
+     transition: 0.3s ease;
+  
+  }
+  .col h3:hover::after{
+     width:30px
+  }
+  .col .social a i{
+     color: #e4981e;
+     margin-top:2rem;
+     margin-right: 5px;
+     transition: 0.3s ease;
+  }
+  .col .social a i:hover{
+     transform: scale(1.5);
+     filter:grayscale(25);
+  }
+  .col .links a{
+     display: block;
+     font-size: 15px;
+     text-decoration: none;
+     color:#f2f2f2;
+     margin-bottom: 5px;
+     position: relative;
+     transition: 0.3s ease;
+  }
+  .col .links a::before{
+     content:'';
+     height: 16px;
+     width:3px;
+     position: absolute;
+     top:5px;
+     left:-10px;
+     background-color: #e4981e;
+     transition: 0.5s ease;
+     opacity: 0;
+  }
+  .col .links a:hover::before{
+     opacity: 1;
+  }
+  .col .links a:hover{
+     transform: translateX(-8px);
+     color:#e4981e;
+  }
+  .col .contact-details{
+     display: inline-flex;
+     justify-content: space-between;
+  }
+  .col .contact-details i{
+     margin-right:15px;
+  }
+  .row .form{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding:2rem 0;
+  }
+  .row .form input{
+     background-color: #e7e7e5;
+     border:0;
+     outline:none;
+     padding:14px 20px;
+     border-radius: 6px;
+     border-top-right-radius: 0;
+     border-bottom-right-radius: 0;
+  }
+  .form button{
+     padding:14px 20px;
+     border:0;
+     border-radius: 6px;
+     border-top-left-radius: 0;
+     border-bottom-left-radius: 0;
+     background-color: #e4981e;
+  }
+   }

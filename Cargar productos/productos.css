@@ -73,3 +73,52 @@ footer {
     background-color: blanchedalmond;
 }
 
+@media screen and (max-width: 1024px) {
+
+.principal {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; /* Espacio entre elementos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Bordes redondeados */
+}
+.item_producto{
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+}
+
+.box_description{
+    
+    display: flex;
+
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn_coomprar{
+    width: 35%;
+    border: 0.5px solid black     ;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.price{
+    width: auto;
+    border: 0.5px solid black     ;
+    border-radius: 5px;
+}
+}
