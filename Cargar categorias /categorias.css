@@ -27,3 +27,15 @@
 .btn88{
     font-size: 2rem;
 }
+
+@media screen and (max-width: 1024px) {
+    
+    .item_categoria{
+
+        height: 7rem;
+        display: flex;
+        gap: 5rem;
+        align-items: center;
+    }
+
+}
