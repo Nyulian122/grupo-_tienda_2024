@@ -1,0 +1,164 @@
+.footer {
+   grid-row-start: 3;
+   grid-column-start: 1;
+   grid-column-end: 3;
+   background-color: #04474b;
+   color: #fff;
+   position: relative;
+   width: 100%;
+   min-height: 300px;
+   padding: 3rem 1rem;
+   font-size: 1rem;
+}
+
+.container1 {
+   max-width: 1140px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   flex-direction: column;
+}
+
+.row {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.col {
+   min-width: 250px;
+   color: #fffffff2;
+   font-family: poppins;
+   padding: 0 2rem;
+   margin-bottom: 20px;
+}
+
+.col .logo {
+   width: 100px;
+   margin-bottom: 25px;
+}
+
+.col h3 {
+   color: #D3B9B9;
+   margin-bottom: 20px;
+   position: relative;
+   cursor: pointer;
+}
+
+.col h3::after {
+   content: '';
+   height: 3px;
+   width: 0;
+   background-color: #D3B9B9;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   transition: 0.3s ease;
+}
+
+.col h3:hover::after {
+   width: 30px;
+}
+
+.col .social a i {
+   color: #e4981e;
+   margin-top: 2rem;
+   margin-right: 5px;
+   transition: 0.3s ease;
+}
+
+.col .social a i:hover {
+   transform: scale(1.5);
+   filter: grayscale(25);
+}
+
+.col .links a {
+   display: block;
+   text-decoration: none;
+   color: #f2f2f2;
+   margin-bottom: 5px;
+   position: relative;
+   transition: 0.3s ease;
+}
+
+.col .links a::before {
+   content: '';
+   height: 16px;
+   width: 3px;
+   position: absolute;
+   top: 5px;
+   left: -10px;
+   background-color: #e4981e;
+   transition: 0.5s ease;
+   opacity: 0;
+}
+
+.col .links a:hover::before {
+   opacity: 1;
+}
+
+.col .links a:hover {
+   transform: translateX(-8px);
+   color: #e4981e;
+}
+
+.col .contact-details {
+   display: inline-flex;
+   justify-content: space-between;
+}
+
+.col .contact-details i {
+   margin-right: 15px;
+}
+
+.row .form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 2rem 0;
+}
+
+.row .form input {
+   background-color: #e7e7e5;
+   border: 0;
+   outline: none;
+   padding: 14px 20px;
+   border-radius: 6px;
+   border-top-right-radius: 0;
+   border-bottom-right-radius: 0;
+}
+
+.form button {
+   padding: 14px 20px;
+   border: 0;
+   border-radius: 6px;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
+   background-color: #e4981e;
+}
+
+@media screen and (max-width: 768px) {
+   .footer {
+       padding: 1rem;
+       font-size: 0.8rem;
+   }
+
+   .container1 {
+       padding: 0;
+   }
+
+   .row {
+       flex-direction: column;
+       align-items: flex-start;
+   }
+
+   .col {
+       padding: 0 1rem;
+   }
+
+   .row .form {
+       padding: 1rem 0;
+   }
+}
