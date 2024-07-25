@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let div_header = document.querySelector(".header");
-    div_header.innerHTML= `
+    div_header.innerHTML = `
     <div class="container">
         <!-- Icono como imagen -->
         <div class="logo">
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
         <!-- Opciones de cuenta, carrito e iniciar sesión con iconos independientes -->
         <div class="options">
-            <a href="#"><i class="fas fa-user"></i> Cuenta</a>
+            <a href="#" class="account"><i class="fas fa-user"></i> Cuenta</a>
             <a href="#" class="carrito"><i class="fas fa-shopping-cart"></i> Carrito</a>
             <a href="#" class="iniciar-sesion"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
         </div>
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const carritoIcon = document.querySelector('.carrito');
     const modalCarrito = document.getElementById("carritoModal");
-    const spanCarrito = document.getElementsByClassName("close")[0];
+    const spanCarrito = modalCarrito.querySelector(".close");
 
     carritoIcon.onclick = async function() {
         await cargarCarrito();
@@ -59,11 +59,9 @@ document.addEventListener("DOMContentLoaded", function() {
         modalCarrito.style.display = "none";
     }
 
- 
-
     const iniciarSesionIcon = document.querySelector('.iniciar-sesion');
     const modalLogin = document.getElementById("loginModal");
-    const spanLogin = document.getElementsByClassName("close")[1];
+    const spanLogin = modalLogin.querySelector(".close");
 
     iniciarSesionIcon.onclick = function() {
         modalLogin.style.display = "block";  
@@ -81,7 +79,17 @@ document.addEventListener("DOMContentLoaded", function() {
         // Por ahora, simplemente cerramos la ventana modal
         modalLogin.style.display = "none";
     });
+
+    // Cerrar los modales al hacer clic fuera del contenido del modal
+    window.onclick = function(event) {
+        if (event.target == modalCarrito) {
+            modalCarrito.style.display = "none";
+        } else if (event.target == modalLogin) {
+            modalLogin.style.display = "none";
+        }
+    };
 });
+
 async function cargarCarrito() {
     try {
         let respuesta = await fetch('https://fakestoreapi.com/products?limit=2');
@@ -153,5 +161,3 @@ function inicializarCarritoModal() {
         }
     });
 }
-cargarCarrito()
-inicializarCarritoModal()
