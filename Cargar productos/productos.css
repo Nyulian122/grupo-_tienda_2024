@@ -1,124 +1,108 @@
-.principal{
+.principal {
     grid-row-start: 2;
     grid-column-start: 2;
-}
-.principal {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem; /* Espacio entre elementos */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    gap: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Bordes redondeados */
-
-
+    border-radius: 10px;
+    padding: 20px;
 }
-.box_description{
-    
+
+.box_description {
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 1.5rem;
     justify-content: center;
     align-items: center;
     gap: 5px;
 }
 
-.item_producto{
+.item_producto {
     border-radius: 10px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
-/* Estilos para las imágenes de los productos */
-/* Estilos para las imágenes de los productos */
 .img img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15rem; /* Ajustar el ancho al 100% del contenedor */
-    height: 15rem; /* Ajustar la altura al 100% del contenedor */
-    object-fit: contain; /* Escalar la imagen manteniendo la relación de aspecto y cubriendo el contenedor */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 15rem;
+    height: 15rem;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para el pie de página */
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff; /* Color de texto claro */
-}
-.price{
+.price {
     width: 50%;
-    border: 1px solid black     ;
+    border: 1px solid black;
     border-radius: 5px;
+    margin: 10px 0;
+    padding: 5px;
 }
 
-.btn_coomprar{
+.btn_coomprar {
     width: 50%;
-    border: 1px solid black     ;
+    border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
-
+    padding: 10px;
+    background-color: #e4981e;
+    color: #fff;
 }
 
-.btn_coomprar:hover{
-    background-color: blanchedalmond;
+.btn_coomprar:hover {
+    background-color: #ffcb7d;
 }
 
 @media screen and (max-width: 1024px) {
+    .principal {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+    }
 
-.principal {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem; /* Espacio entre elementos */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px; /* Bordes redondeados */
-}
-.item_producto{
-    border-radius: 10px;
+    .box_description {
+        font-size: 1rem;
+    }
 
-    display: flex;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-
+    .img img {
+        width: 12rem;
+        height: 12rem;
+    }
 }
 
-.box_description{
-    
-    display: flex;
+@media screen and (max-width: 768px) {
+    .principal {
+        grid-template-columns: 1fr;
+        padding: 5px;
+    }
 
-    flex-direction: column;
-    font-size: 12px;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
+    .item_producto {
+        margin-bottom: 10px;
+    }
 
-.btn_coomprar{
-    width: 35%;
-    border: 0.5px solid black     ;
-    border-radius: 5px;
-    cursor: pointer;
+    .box_description {
+        font-size: 0.8rem;
+    }
 
-}
+    .img img {
+        width: 10rem;
+        height: 10rem;
+    }
 
-.price{
-    width: auto;
-    border: 0.5px solid black     ;
-    border-radius: 5px;
-}
+    .btn_coomprar {
+        width: 70%;
+    }
+
+    .price {
+        width: 70%;
+    }
 }
