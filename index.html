@@ -11,19 +11,22 @@
     <link rel="stylesheet" href="./Cargar productos/productos.css">
     <link rel="stylesheet" href="./css/config.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <link rel="stylesheet" href="path/to/your/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
-    
+    <link rel="stylesheet" href="path/to/cart.css"> <!-- Asegúrate de que el path es correcto -->
 </head>
 <body>
     <main class="root"></main>
+
+    <div class="options">
+        <a href="#">Cuenta</a>
+        <a href="#">Carrito (<span id="cart-count">0</span>)</a>
+        <a href="#">Iniciar Sesión</a>
+    </div>
+    
 </body>
 <script src="js/main.js" type="module"></script>
 <script src="Cargar footer/cargar_footer.js" type="module"></script>
 <script src="Cargar header/cargar header.js" type="module"></script>
 <script src="Cargar productos/cargar productos.js" type="module"></script>
 <script src="Cargar categorias /cargarr_categorias.js" type="module"></script>
+<script src="./cart.js"></script>
 </html>

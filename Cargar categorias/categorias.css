@@ -28,10 +28,14 @@
         flex-direction: row;
         overflow-x: auto;
         white-space: nowrap;
+        height: 1px;
+        width: 1px;
     }
 
     .item_categoria {
         display: inline-block;
         margin-right: 1rem;
+        font-size: 1rem;
     }
+    
 }

@@ -1,3 +1,4 @@
+/* Estilos para Footer */
 .footer {
    grid-row-start: 3;
    grid-column-start: 1;
@@ -139,7 +140,8 @@
    background-color: #e4981e;
 }
 
-@media screen and (max-width: 768px) {
+/* Media Queries para Footer */
+@media (max-width: 1024px) {
    .footer {
        padding: 1rem;
        font-size: 0.8rem;
